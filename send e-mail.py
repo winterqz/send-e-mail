@@ -5,7 +5,7 @@ from parsel import Selector
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36'
 }
-jssf_url = 'http://yjsc.jsnu.edu.cn/zsylq/list1.htm'
+jssf_url = 'http://yz.ujs.edu.cn/index/sszs.htm'
 jssf_response = requests.get(url=jssf_url, headers=headers)
 jssf_response.encoding = 'utf-8'
 # print(jsdx_response.text)
@@ -20,7 +20,7 @@ if str in title:
     # print(1)
     content = [
         '貌似可以查看初试成绩了-------',
-        'http://yjsc.jsnu.edu.cn/zsylq/list1.htm'
+        'http://yz.ujs.edu.cn/index/sszs.htm'
     ]
     sender = '***@qq.com'
     password = '***'
@@ -32,6 +32,6 @@ else:
     content = '今日还不能查看初试成绩-------'
     sender = '***@qq.com'
     password = '***'
-    res = '***@qq.com'  # 迟雨邮箱
+    res = '***@qq.com'
     yag = yagmail.SMTP(user=sender, password=password, host='smtp.qq.com', smtp_ssl=True)
     yag.send(to=res, subject='今日初试通知', contents=content)
